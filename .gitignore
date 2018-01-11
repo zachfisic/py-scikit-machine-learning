@@ -7,3 +7,5 @@ py3
 .vscode
 *.sublime-project
 *.sublime-workspace
+environment.*
+sklearn-ml.*
