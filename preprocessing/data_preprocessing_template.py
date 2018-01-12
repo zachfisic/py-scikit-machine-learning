@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 from sklearn.preprocessing import Imputer, LabelEncoder, OneHotEncoder
+from sklearn.model_selection import train_test_split
 
 df = pd.read_csv('./data/sample.csv')
 X = df.iloc[:, :-1].values
@@ -31,3 +32,12 @@ X = onehotencoder_X.fit_transform(X).toarray()
 
 labelencoder_y = LabelEncoder()
 y = labelencoder_y.fit_transform(y)
+
+
+"""
+Splitting dataset into training and test
+
+Description: models must be trained on observations before making predictions. Once trained on one subset of data (`train`), predictions can be tested off another subset (`test`)
+Example: train model on 80% of observations, use 20% of observations as test subset
+"""
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
