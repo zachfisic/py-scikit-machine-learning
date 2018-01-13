@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
-from sklearn.preprocessing import Imputer, LabelEncoder, OneHotEncoder
+from sklearn.preprocessing import Imputer, LabelEncoder, OneHotEncoder, StandardScaler
 from sklearn.model_selection import train_test_split
 
 df = pd.read_csv('./data/sample.csv')
@@ -41,3 +41,16 @@ Description: models must be trained on observations before making predictions. O
 Example: train model on 80% of observations, use 20% of observations as test subset
 """
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
+
+
+"""
+Feature Scaling
+
+Description: feature parameters need to be on the same relative scale to allow the machine to learn effectively. Standardization or normalization is common.
+Example: standardize all variables by centering them on 0, then deviate positively or negatively
+"""
+sc_X = StandardScaler()
+X_train = sc_X.fit_transform(X_train)
+
+# scaler was fitted on X_train. X_test only needs to be transformed
+X_test = sc_X.transform(X_test)
