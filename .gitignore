@@ -1,11 +1,14 @@
-py3
+# OS
 .DS_Store
 .DS_Store?
 ._*
 .Spotlight-V100
 .Trashes
-.vscode
-*.sublime-project
-*.sublime-workspace
+
+# Environments
 environment.*
+
+# Workspace
+.vscode
 sklearn-ml.*
+_wip
