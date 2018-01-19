@@ -23,3 +23,6 @@ plt.title('Polynomial Regression')
 plt.xlabel('position')
 plt.ylabel('salary')
 plt.show()
+
+# Run prediction
+l_reg.predict(regressor.fit_transform(6.5))
